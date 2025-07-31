@@ -7,9 +7,9 @@ resource "aws_eks_fargate_profile" "fargate_profile_kube_system" {
   selector {
     namespace = "kube-system"
     # Enable the below labels if we want only CoreDNS Pods to run on Fargate from kube-system namespace
-    #labels = { 
-    #  "k8s-app" = "kube-dns"
-    #}
+    labels = { 
+      "k8s-app" = "kube-dns"
+    }
   }
 }
 
